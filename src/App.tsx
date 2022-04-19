@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 function App() {
     return (
-        <div className={'wrap'} >
+        <div className={'wrapper'} >
             <Header/>
             <Footer/>
         </div>
