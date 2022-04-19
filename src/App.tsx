@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
     return (
-        <div>
-            Shop
+        <div className={'wrap'} >
+            <Header/>
+            <Footer/>
         </div>
     );
 }
