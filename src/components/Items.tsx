@@ -7,6 +7,7 @@ type ItemsPropsType = {
 
 export const Items = (props: ItemsPropsType) => {
     return <main>
-        { props.items.map(el => el.title)}
+        {props.items.map(el => (
+            <h1>{el.title}</h1>))}
     </main>
 }
