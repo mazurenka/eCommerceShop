@@ -12,10 +12,6 @@ export type ItemType = {
     price: string
 }
 
-export type ItemsType = {
-    items: ItemType
-}
-
 export const App = () => {
 
     let items: Array<ItemType> = [{

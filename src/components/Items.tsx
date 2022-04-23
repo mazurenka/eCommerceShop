@@ -1,5 +1,6 @@
 import React from "react";
 import {ItemType} from "../App";
+import {Item} from "./Item";
 
 type ItemsPropsType = {
     items: Array<ItemType>
@@ -8,6 +9,6 @@ type ItemsPropsType = {
 export const Items = (props: ItemsPropsType) => {
     return <main>
         {props.items.map(el => (
-            <h1>{el.title}</h1>))}
+            <Item items={el}/>))}
     </main>
 }
