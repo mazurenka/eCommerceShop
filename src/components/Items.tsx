@@ -2,11 +2,11 @@ import React from "react";
 import {ItemType} from "../App";
 
 type ItemsPropsType = {
-    items: ItemType
+    items: Array<ItemType>
 }
 
 export const Items = (props: ItemsPropsType) => {
     return <main>
-        { props.items.title }
+        { props.items.map(el => el.title)}
     </main>
 }
