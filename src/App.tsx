@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {Items} from "./components/Items";
@@ -51,9 +51,6 @@ export const App = () => {
         price: '1149.99'
     }]
 
-    const [state, setState] = useState([items])
-
-
     return (
         <div className={'wrapper'}>
             <Header/>
@@ -66,3 +63,4 @@ export const App = () => {
 }
 
 export default App;
+
