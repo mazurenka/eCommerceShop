@@ -9,6 +9,6 @@ type ItemsPropsType = {
 export const Items = (props: ItemsPropsType) => {
     return <main>
         {props.items.map(el => (
-            <Item items={el}/>))}
+            <Item key={el.id} items={el}/>))}
     </main>
 }

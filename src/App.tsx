@@ -17,7 +17,7 @@ export const App = () => {
     let items: Array<ItemType> = [{
         id: 1,
         title: 'Chair grey',
-        img: 'chair-grey.jpeg',
+        img: 'chair_grey.jpeg',
         desc: 'abcdefg',
         category: 'chairs',
         price: '49.99'
@@ -45,7 +45,7 @@ export const App = () => {
     }, {
         id: 5,
         title: 'TV',
-        img: 'TV.jpeg',
+        img: 'tv.jpeg',
         desc: 'abcdefg',
         category: 'TVs',
         price: '1149.99'

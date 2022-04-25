@@ -7,6 +7,13 @@ type ItemsPropsType = {
 
 export const Item = (props: ItemsPropsType) => {
     return (
-        <div>{props.items.title}</div>
+
+        <div className={'item'}>
+            <img src={'./img/' + props.items.img}/>
+            <h2>{props.items.title}</h2>
+            <p>{props.items.desc}</p>
+            <b>{props.items.price}$</b>
+            <div className={'add-to-cart'}>+</div>
+        </div>
     )
 }
