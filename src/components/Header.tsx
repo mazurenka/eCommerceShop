@@ -19,7 +19,7 @@ debugger
                 />
 
                 {cartOpen && (
-                    <div className={'shop-cart'}></div>
+                    <div className='shop-cart'></div>
                 )}
 
             </div>
