@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import {FaShoppingCart} from 'react-icons/fa';
 
 export default function Header() {
-debugger
+
     let [cartOpen, setCartOpen] = useState<boolean>(false)
-debugger
+
     return (
         <header>
             <div>
