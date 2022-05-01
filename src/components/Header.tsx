@@ -1,7 +1,14 @@
-import React, {useState} from "react";
+import React, {Dispatch, SetStateAction, useState} from "react";
 import {FaShoppingCart} from 'react-icons/fa';
+import {ItemType} from "../App";
+import {Order} from "./Order";
 
-export default function Header() {
+type HeaderPropsType = {
+    orders: Array<ItemType>
+    //orders: Dispatch<SetStateAction<ItemType[] | null>>
+}
+
+export default function Header(props: HeaderPropsType) {
 
     let [cartOpen, setCartOpen] = useState<boolean>(false)
 
@@ -18,9 +25,8 @@ export default function Header() {
                                 className={`shop-cart-button ${cartOpen && 'active'}`}
                 />
 
-                {cartOpen && (
-                    <div className='shop-cart'></div>
-                )}
+                {cartOpen && (<div className='shop-cart'>{props.orders.map(el => (<Order key={el.id} item={el}/>)
+                )}</div>)}
 
             </div>
             <div className={'presentation'}></div>

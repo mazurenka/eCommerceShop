@@ -4,7 +4,6 @@ import Footer from "./components/Footer";
 import {Items} from "./components/Items";
 import {v1} from 'uuid';
 
-
 export type ItemType = {
     id: string,
     title: string,
@@ -56,7 +55,7 @@ export const App = () => {
         }
     ])
 
-    let [odrer, setOrder] = useState<Array<ItemType> | null>([])
+    let [odrer, setOrder] = useState<Array<ItemType>>([])
 
     function addToOrder(id: string, title: string, img: string, desc: string, category: string, price: string) {
         let newItemId = v1()
@@ -71,7 +70,7 @@ export const App = () => {
 
     return (
         <div className={'wrapper'}>
-            <Header/>
+            <Header orders={setOrder}/>
 
             <Items items={items} addToOrder={addToOrder}/>
 
