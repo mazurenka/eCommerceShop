@@ -4,7 +4,7 @@ import {ItemType} from "../App";
 import {Order} from "./Order";
 
 type HeaderPropsType = {
-    orders: Array<ItemType>
+    orders: ([]) => void
     //orders: Dispatch<SetStateAction<ItemType[] | null>>
 }
 

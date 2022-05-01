@@ -70,7 +70,7 @@ export const App = () => {
 
     return (
         <div className={'wrapper'}>
-            <Header orders={setOrder}/>
+            <Header orders={setOrder([])}/>
 
             <Items items={items} addToOrder={addToOrder}/>
 
