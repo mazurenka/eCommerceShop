@@ -72,8 +72,9 @@ export class App extends React.Component {
         );
     }
 
-    deleteOrder (id: number) {
-
+    deleteOrder(id: any) {
+        // @ts-ignore
+        this.setState({orders: this.state.orders.filter((el: any) => el.id !== id)})
     }
 
     addToOrder(item: ItemType) {
