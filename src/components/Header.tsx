@@ -16,17 +16,17 @@ export default function Header(props: HeaderPropsType) {
         <header>
             <div>
                 <span className={'logo'}>House Staff</span>
-               {/* <ul className={'nav'}>
+                <ul className={'nav'}>
                     <li>about</li>
                     <li>contacts</li>
                     <li>home</li>
                 </ul>
-                <FaShoppingCart onClick={() => setCartOpen(cartOpen = !cartOpen)}
+               {/* <FaShoppingCart onClick={() => setCartOpen(cartOpen = !cartOpen)}
                                 className={`shop-cart-button ${cartOpen && 'active'}`}
-                />
+                />*/}
 
                 {cartOpen && (<div className='shop-cart'>{props.orders.map(el => (<Order key={el.id} item={el}/>)
-                )}</div>)}*/}
+                )}</div>)}
 
             </div>
             <div className={'presentation'}></div>
