@@ -17,7 +17,7 @@ export class Items extends React.Component<ItemsPropsType> {
         return <main>
 
             { this.props.items.map(el => (
-                <h1>{el.title}</h1>
+                <Item key={el.id} item={el} onAdd={this.props.onAdd} />
             )) }
         </main>
     }

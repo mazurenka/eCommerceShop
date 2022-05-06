@@ -14,12 +14,11 @@ export type ItemType = {
 }
 
 export class App extends React.Component {
-
     constructor(props: any) {
-        super(props);
+        super(props)
         this.state = {
-            items: [
-                {
+            orders:[],
+            items: [{
                     id: 1,
                     title: 'Chair grey',
                     img: 'chair_grey.jpeg',
@@ -54,9 +53,8 @@ export class App extends React.Component {
                     desc: 'abcdefg',
                     category: 'TVs',
                     price: '1149.99'
-                }
-            ]
-        }
+                }]}
+        this.addToOrder = this.addToOrder.bind(this)
     }
 
     render() {
@@ -116,13 +114,16 @@ export class App extends React.Component {
 
         return (
             <div className={'wrapper'}>
-                <Header/>
+                <Header orders={this.state.orders}/>
 
-                <Items items={this.state.items} />
+                <Items items={this.state.items} anAdd={this.addToOrder} />
 
                 <Footer/>
             </div>
         );
+    }
+    addToOrder(item: ItemType) {
+        this.setState({orders: [...this.state.orders, item]})
     }
 }
 

@@ -5,12 +5,14 @@ type OrderPropsType = {
     item: ItemType
 }
 
-export const Order = (props: OrderPropsType) => {
-    return (
-        <div className={'item'}>
-            <img src={'./img/' + props.item.img}/>
-            <h2>{props.item.title}</h2>
-            <b>{props.item.price}$</b>
-        </div>
-    )
+export class Order extends React.Component<OrderPropsType> {
+    render() {
+        return (
+            <div className={'item'}>
+                <img src={'./img/' + this.props.item.img}/>
+                <h2>{this.props.item.title}</h2>
+                <b>{this.props.item.price}$</b>
+            </div>
+        )
+    }
 }
