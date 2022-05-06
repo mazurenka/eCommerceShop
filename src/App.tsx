@@ -14,7 +14,7 @@ export type ItemType = {
 }
 
 export const App = () => {
-    let itemId = v1()
+   /* let itemId = v1()
 
     let [items, setItems] = useState<Array<ItemType>>([
         {
@@ -66,13 +66,13 @@ export const App = () => {
             [newItemId]: [newItem]
         })
         debugger
-    }
+    }*/
 
     return (
         <div className={'wrapper'}>
-            <Header orders={setOrder([])}/>
+            <Header />
 
-            <Items items={items} addToOrder={addToOrder}/>
+            {/*<Items />*/}
 
             <Footer/>
         </div>

@@ -17,9 +17,9 @@ body {
     margin: 50px auto;
 }
 
-header {
+/*header {
     position: relative;
-}
+}*/
 
 header .logo {
     font-weight: 600;

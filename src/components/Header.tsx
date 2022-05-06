@@ -10,13 +10,13 @@ type HeaderPropsType = {
 
 export default function Header(props: HeaderPropsType) {
 
-    let [cartOpen, setCartOpen] = useState<boolean>(false)
+    //let [cartOpen, setCartOpen] = useState<boolean>(false)
 
     return (
         <header>
             <div>
                 <span className={'logo'}>House Staff</span>
-                <ul className={'nav'}>
+               {/* <ul className={'nav'}>
                     <li>about</li>
                     <li>contacts</li>
                     <li>home</li>
@@ -26,7 +26,7 @@ export default function Header(props: HeaderPropsType) {
                 />
 
                 {cartOpen && (<div className='shop-cart'>{props.orders.map(el => (<Order key={el.id} item={el}/>)
-                )}</div>)}
+                )}</div>)}*/}
 
             </div>
             <div className={'presentation'}></div>
