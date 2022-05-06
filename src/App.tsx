@@ -13,70 +13,117 @@ export type ItemType = {
     price: string
 }
 
-export const App = () => {
-   /* let itemId = v1()
+export class App extends React.Component {
 
-    let [items, setItems] = useState<Array<ItemType>>([
-        {
-            id: itemId,
-            title: 'Chair grey',
-            img: 'chair_grey.jpeg',
-            desc: 'abcdefg',
-            category: 'chairs',
-            price: '49.99'
-        }, {
-            id: itemId,
-            title: 'Table',
-            img: 'table.jpeg',
-            desc: 'abcdefg',
-            category: 'tables',
-            price: '149.99'
-        }, {
-            id: itemId,
-            title: 'Sofa',
-            img: 'sofa.jpeg',
-            desc: 'abcdefg',
-            category: 'sofas',
-            price: '349.99'
-        }, {
-            id: itemId,
-            title: 'Lamp',
-            img: 'lamp.jpeg',
-            desc: 'abcdefg',
-            category: 'lamps',
-            price: '59.99'
-        }, {
-            id: itemId,
-            title: 'TV',
-            img: 'tv.jpeg',
-            desc: 'abcdefg',
-            category: 'TVs',
-            price: '1149.99'
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            items: [
+                {
+                    id: 1,
+                    title: 'Chair grey',
+                    img: 'chair_grey.jpeg',
+                    desc: 'abcdefg',
+                    category: 'chairs',
+                    price: '49.99'
+                }, {
+                    id: 2,
+                    title: 'Table',
+                    img: 'table.jpeg',
+                    desc: 'abcdefg',
+                    category: 'tables',
+                    price: '149.99'
+                }, {
+                    id: 3,
+                    title: 'Sofa',
+                    img: 'sofa.jpeg',
+                    desc: 'abcdefg',
+                    category: 'sofas',
+                    price: '349.99'
+                }, {
+                    id: 4,
+                    title: 'Lamp',
+                    img: 'lamp.jpeg',
+                    desc: 'abcdefg',
+                    category: 'lamps',
+                    price: '59.99'
+                }, {
+                    id: 5,
+                    title: 'TV',
+                    img: 'tv.jpeg',
+                    desc: 'abcdefg',
+                    category: 'TVs',
+                    price: '1149.99'
+                }
+            ]
         }
-    ])
+    }
 
-    let [odrer, setOrder] = useState<Array<ItemType>>([])
+    render() {
+        /* let itemId = v1()
 
-    function addToOrder(id: string, title: string, img: string, desc: string, category: string, price: string) {
-        let newItemId = v1()
-        let newItem: ItemType = {id: newItemId, title, img, desc, category, price}
-        debugger
-        setOrder({
-            ...items,
-            [newItemId]: [newItem]
-        })
-        debugger
-    }*/
+         let [items, setItems] = useState<Array<ItemType>>([
+             {
+                 id: itemId,
+                 title: 'Chair grey',
+                 img: 'chair_grey.jpeg',
+                 desc: 'abcdefg',
+                 category: 'chairs',
+                 price: '49.99'
+             }, {
+                 id: itemId,
+                 title: 'Table',
+                 img: 'table.jpeg',
+                 desc: 'abcdefg',
+                 category: 'tables',
+                 price: '149.99'
+             }, {
+                 id: itemId,
+                 title: 'Sofa',
+                 img: 'sofa.jpeg',
+                 desc: 'abcdefg',
+                 category: 'sofas',
+                 price: '349.99'
+             }, {
+                 id: itemId,
+                 title: 'Lamp',
+                 img: 'lamp.jpeg',
+                 desc: 'abcdefg',
+                 category: 'lamps',
+                 price: '59.99'
+             }, {
+                 id: itemId,
+                 title: 'TV',
+                 img: 'tv.jpeg',
+                 desc: 'abcdefg',
+                 category: 'TVs',
+                 price: '1149.99'
+             }
+         ])
 
-    return (
-        <div className={'wrapper'}>
-            <Header />
+         let [odrer, setOrder] = useState<Array<ItemType>>([])
 
-            {/*<Items />*/}
+         function addToOrder(id: string, title: string, img: string, desc: string, category: string, price: string) {
+             let newItemId = v1()
+             let newItem: ItemType = {id: newItemId, title, img, desc, category, price}
+             debugger
+             setOrder({
+                 ...items,
+                 [newItemId]: [newItem]
+             })
+             debugger
+         }*/
 
-            <Footer/>
-        </div>
-    );
+        return (
+            <div className={'wrapper'}>
+                <Header/>
+
+                <Items items={this.state.items} />
+
+                <Footer/>
+            </div>
+        );
+    }
 }
 
 export default App;

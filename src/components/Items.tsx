@@ -12,9 +12,13 @@ type ItemsPropsType = {
                  price: string) => void
 }
 
-export const Items = (props: ItemsPropsType) => {
-    return <main>
-        {props.items.map(el => (
-            <Item key={el.id} item={el} addToOrder={props.addToOrder}/>))}
-    </main>
+export class Items extends React.Component<ItemsPropsType> {
+    render() {
+        return <main>
+
+            { this.props.items.map(el => (
+                <h1>{el.title}</h1>
+            )) }
+        </main>
+    }
 }
