@@ -55,28 +55,37 @@ export class App extends React.Component {
             }]
         }
         this.addToOrder = this.addToOrder.bind(this)
+        // @ts-ignore
+        this.addToOrder = this.deleteOrder.bind(this)
     }
 
     render() {
         return (
             <div className={'wrapper'}>
-                <Header orders={this.state.orders}/>
-
-                <Items items={this.state.items} anAdd={this.addToOrder}/>
+                {/*@ts-ignore*/}
+                <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
+                {/*@ts-ignore*/}
+                <Items items={this.state.items} onAdd={this.addToOrder}/>
 
                 <Footer/>
             </div>
         );
     }
 
+    deleteOrder (id: number) {
+
+    }
+
     addToOrder(item: ItemType) {
         let isInArray = false
+        // @ts-ignore
         this.state.orders.forEach((el: ItemType) => {
             if (el.id === item.id)
                 isInArray = true
         })
-        if (!isInArray)
+        if (!isInArray) { // @ts-ignore
             this.setState({orders: [...this.state.orders, item]})
+        }
     }
 }
 

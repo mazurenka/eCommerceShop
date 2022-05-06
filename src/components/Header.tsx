@@ -1,13 +1,17 @@
 import React, {useState} from "react";
 import {FaShoppingCart} from 'react-icons/fa';
 import {Order} from "./Order";
+import {ItemType} from "../App";
 
-
+type HeaderPropsType = {
+    orders: Array<ItemType>
+    onDelete: (id: number) => void
+}
 
 const showOrders = (props: any) => {
     return (<div>
         {props.orders.map((el: any) => (
-            <Order key={el.id} item={el}/>
+            <Order onDelete={props.onDelete} key={el.id} item={el}/>
         ))}
     </div>)
 }
@@ -18,7 +22,7 @@ const showNothing = () => {
     </div>)
 }
 
-export default function Header(props: any) {
+export default function Header(props: HeaderPropsType) {
 
     let [cartOpen, setCartOpen] = useState<boolean>(false)
 

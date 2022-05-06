@@ -4,12 +4,7 @@ import {Item} from "./Item";
 
 type ItemsPropsType = {
     items: Array<ItemType>
-    addToOrder: (id: string,
-                 title: string,
-                 img: string,
-                 desc: string,
-                 category: string,
-                 price: string) => void
+    onAdd: (item: ItemType) => void
 }
 
 export class Items extends React.Component<ItemsPropsType> {
