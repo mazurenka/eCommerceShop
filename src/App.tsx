@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {Items} from "./components/Items";
+import {Categories} from "./components/categories";
 
 export type ItemType = {
     id: string,
@@ -64,6 +65,7 @@ export class App extends React.Component {
             <div className={'wrapper'}>
                 {/*@ts-ignore*/}
                 <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
+                <Categories/>
                 {/*@ts-ignore*/}
                 <Items items={this.state.items} onAdd={this.addToOrder}/>
 
