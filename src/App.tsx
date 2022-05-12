@@ -18,6 +18,7 @@ export class App extends React.Component {
         super(props)
         this.state = {
             orders: [],
+            currentItems: [],
             items: [{
                 id: 1,
                 title: 'Chair grey',
@@ -55,6 +56,8 @@ export class App extends React.Component {
                 price: '1149.99'
             }]
         }
+        // @ts-ignore
+        this.state.currentItems = this.state.items
         this.addToOrder = this.addToOrder.bind(this)
         // @ts-ignore
         this.addToOrder = this.deleteOrder.bind(this)
@@ -67,9 +70,9 @@ export class App extends React.Component {
             <div className={'wrapper'}>
                 {/*@ts-ignore*/}
                 <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
-                <Categories chooseCategory={this.chooseCategory} />
+                <Categories chooseCategory={this.chooseCategory}/>
                 {/*@ts-ignore*/}
-                <Items items={this.state.items} onAdd={this.addToOrder}/>
+                <Items items={this.state.currentItems} onAdd={this.addToOrder}/>
 
                 <Footer/>
             </div>
@@ -77,7 +80,16 @@ export class App extends React.Component {
     }
 
     chooseCategory(category: any) {
-
+        if (category === 'all') {
+            // @ts-ignore
+            this.setState({currentItems: this.state.items})
+            return
+        }
+        // @ts-ignore
+        this.setState({
+            // @ts-ignore
+            currentItems: this.state.items.filter((el: any) => el.category === category)
+        })
     }
 
     deleteOrder(id: any) {

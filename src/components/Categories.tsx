@@ -1,5 +1,4 @@
 import {Component} from "react";
-import exp from "constants";
 
 export type CategoriesType = {
     key: string
@@ -34,11 +33,12 @@ export class Categories extends Component<any, any> {
             ]
         }
     }
+
     render() {
         return (
             <div className='categories'>
-                {this.state.categories.map((el: CategoriesType)  => (
-                    <div key={el.key} onClick={() => this.props.chooseCategory(el.key)} >{el.name}</div>
+                {this.state.categories.map((el: CategoriesType) => (
+                    <div key={el.key} onClick={() => this.props.chooseCategory(el.key)}>{el.name}</div>
                 ))}
             </div>
         )
