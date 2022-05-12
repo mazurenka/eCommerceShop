@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {Items} from "./components/Items";
-import {Categories} from "./components/categories";
+import {Categories} from "./components/Categories";
 
 export type ItemType = {
     id: string,
@@ -58,6 +58,8 @@ export class App extends React.Component {
         this.addToOrder = this.addToOrder.bind(this)
         // @ts-ignore
         this.addToOrder = this.deleteOrder.bind(this)
+        this.chooseCategory = this.chooseCategory.bind(this)
+
     }
 
     render() {
@@ -65,13 +67,17 @@ export class App extends React.Component {
             <div className={'wrapper'}>
                 {/*@ts-ignore*/}
                 <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
-                <Categories/>
+                <Categories chooseCategory={this.chooseCategory} />
                 {/*@ts-ignore*/}
                 <Items items={this.state.items} onAdd={this.addToOrder}/>
 
                 <Footer/>
             </div>
         );
+    }
+
+    chooseCategory(category: any) {
+
     }
 
     deleteOrder(id: any) {
