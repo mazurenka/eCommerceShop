@@ -23,7 +23,7 @@ export class Categories extends Component<any, any> {
                     name: 'Tables'
                 },
                 {
-                    key: 'lights',
+                    key: 'lamps',
                     name: 'Lights'
                 },
                 {

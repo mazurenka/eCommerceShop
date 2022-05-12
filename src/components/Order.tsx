@@ -4,7 +4,7 @@ import {FaTrash} from "react-icons/fa";
 
 type OrderPropsType = {
     item: ItemType
-    onDelete: (id: number) => void
+    onDelete: (id: any) => void
 }
 
 export class Order extends React.Component<OrderPropsType> {
