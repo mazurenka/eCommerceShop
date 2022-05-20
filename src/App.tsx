@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {Items} from "./components/Items";
 import {Categories} from "./components/Categories";
+import {ShowFullItem} from "./components/ShowFullItem";
 
 export type ItemType = {
     id: string,
@@ -11,6 +12,10 @@ export type ItemType = {
     desc: string,
     category: string,
     price: string
+}
+
+type ShowFullItemType = {
+    showFullItem: boolean
 }
 
 export class App extends React.Component {
@@ -54,15 +59,15 @@ export class App extends React.Component {
                 desc: 'abcdefg',
                 category: 'TVs',
                 price: '1149.99'
-            }]
+            }],
+            showFullItem: false
         }
         // @ts-ignore
         this.state.currentItems = this.state.items
         this.addToOrder = this.addToOrder.bind(this)
-        // @ts-ignore
-        this.addToOrder = this.deleteOrder.bind(this)
+        this.deleteOrder = this.deleteOrder.bind(this)
         this.chooseCategory = this.chooseCategory.bind(this)
-
+        this.onShowItem = this.onShowItem.bind(this)
     }
 
     render() {
@@ -72,11 +77,17 @@ export class App extends React.Component {
                 <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
                 <Categories chooseCategory={this.chooseCategory}/>
                 {/*@ts-ignore*/}
-                <Items items={this.state.currentItems} onAdd={this.addToOrder}/>
-
+                <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder}/>
+                {/*@ts-ignore*/}
+                {this.state.showFullItem && <ShowFullItem/>}
                 <Footer/>
             </div>
         );
+    }
+
+    onShowItem() {
+        // @ts-ignore
+        this.setState({showFullItem: !this.state.showFullItem})
     }
 
     chooseCategory(category: any) {
