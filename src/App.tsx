@@ -56,7 +56,8 @@ export class App extends React.Component {
                 category: 'TVs',
                 price: '1149.99'
             }],
-            showFullItem: false
+            showFullItem: false,
+            fullItem: {}
         }
         // @ts-ignore
         this.state.currentItems = this.state.items
@@ -75,13 +76,14 @@ export class App extends React.Component {
                 {/*@ts-ignore*/}
                 <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder}/>
                 {/*@ts-ignore*/}
-                {this.state.showFullItem && <ShowFullItem/>}
+                {this.state.showFullItem && <ShowFullItem onAdd={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItem}/>}
                 <Footer/>
             </div>
         );
     }
 
-    onShowItem() {
+    onShowItem(item: ItemType, showFullItem: boolean) {
+        this.setState({fullItem: item})
         // @ts-ignore
         this.setState({showFullItem: !this.state.showFullItem})
     }
