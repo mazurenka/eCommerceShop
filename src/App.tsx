@@ -14,10 +14,6 @@ export type ItemType = {
     price: string
 }
 
-type ShowFullItemType = {
-    showFullItem: boolean
-}
-
 export class App extends React.Component {
     constructor(props: any) {
         super(props)
